@@ -13,14 +13,17 @@ export default function Feed() {
   return (
     <div className="feed">
       <h1 className="feed-header">Feed</h1>
-      {applications.map((application) => (
-        <div className="application-container">
-          <div className="application-header">{application.name}</div>
-          <div className="application-status">
-            {application.applied ? application.status : "Not Applied"}
+      <div className="feed-body">
+        <p>Here are your applications</p>
+        {applications.map((application) => (
+          <div className="application-container">
+            <div className="application-header">{application.name}</div>
+            <div className="application-status">
+              {application.applied ? application.status : "Not Applied"}
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 }
