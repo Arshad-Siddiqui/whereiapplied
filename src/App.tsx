@@ -1,14 +1,10 @@
 import "./App.css";
-import Feed from "./components/feed";
-import Footer from "./components/footer";
-import ButtonAppBar from "./components/buttonAppBar";
+import FeedPage from "./pages/feed";
 
 function App() {
   return (
     <div className="app">
-      <ButtonAppBar />
-      <Feed />
-      <Footer />
+      <FeedPage />
     </div>
   );
 }

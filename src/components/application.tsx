@@ -7,7 +7,7 @@ export default function Application({
 }: {
   application: application;
 }) {
-  // Website is used to get the logo from clearbit
+  // <--- Processing info for display --->
   const website: string = application.website || "clearbit.com";
 
   const containerClassName = `application-container ${
@@ -18,6 +18,8 @@ export default function Application({
     application.date?.toString().split("T")[0] || "Not Specified";
 
   const showDate = application.date ? "block" : "none";
+  // <--- End processing info for display --->
+
   return (
     <Card className={containerClassName}>
       <div className="application-text-container">
