@@ -17,3 +17,7 @@
 .rejected {
   opacity: 0.5;
 }
+
+.application-text-container {
+  margin-left: 0.3rem;
+}
