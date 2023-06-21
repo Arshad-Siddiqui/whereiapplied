@@ -21,6 +21,9 @@ export default function Feed() {
             <div className="application-status">
               {application.applied ? application.status : "Not Applied"}
             </div>
+            <div className="date-applied">
+              {application.date?.toString() || "12/12/12"}
+            </div>
           </div>
         ))}
       </div>
@@ -32,4 +35,5 @@ type application = {
   name: string;
   applied: boolean;
   status: string;
+  date: Date | null;
 };
