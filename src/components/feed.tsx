@@ -1,7 +1,6 @@
 import "./feed.css";
 import { useState, useEffect } from "react";
 import Application from "./application";
-import Button from "@mui/material/Button";
 
 export default function Feed() {
   const [applications, setApplications] = useState<application[]>([]);
@@ -28,4 +27,5 @@ type application = {
   applied: boolean;
   status: string;
   date: Date | null;
+  website: string;
 };

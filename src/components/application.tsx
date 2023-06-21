@@ -6,6 +6,8 @@ export default function Application({
 }: {
   application: application;
 }) {
+  // Website is used to get the logo from clearbit
+  const website: string = application.website || "clearbit.com";
   return (
     <Card className="application-container">
       <div className="application-text-container">
@@ -17,7 +19,11 @@ export default function Application({
           Date Applied: {application.date?.toString() || "12/12/12"}
         </div>
       </div>
-      <img src="https://logo.clearbit.com/clearbit.com" />
+      <img
+        src={`https://logo.clearbit.com/${website}`}
+        height="128px"
+        width="128px"
+      />
     </Card>
   );
 }
@@ -27,4 +33,5 @@ type application = {
   applied: boolean;
   status: string;
   date: Date | null;
+  website: string;
 };
