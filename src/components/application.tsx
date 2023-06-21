@@ -16,6 +16,8 @@ export default function Application({
 
   const dateApplied =
     application.date?.toString().split("T")[0] || "Not Specified";
+
+  const showDate = application.date ? "block" : "none";
   return (
     <Card className={containerClassName}>
       <div className="application-text-container">
@@ -38,6 +40,7 @@ export default function Application({
           variant="body2"
           color="text.secondary"
           className="date-applied"
+          display={showDate}
         >
           Date Applied: {dateApplied}
         </Typography>
