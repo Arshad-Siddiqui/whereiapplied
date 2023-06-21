@@ -1,5 +1,6 @@
 import "./feed.css";
 import { useState, useEffect } from "react";
+import Application from "./application";
 
 export default function Feed() {
   const [applications, setApplications] = useState<application[]>([]);
@@ -15,16 +16,8 @@ export default function Feed() {
       <h1 className="feed-header">Feed</h1>
       <div className="feed-body">
         <p>Here are your applications</p>
-        {applications.map((application) => (
-          <div className="application-container">
-            <div className="application-header">{application.name}</div>
-            <div className="application-status">
-              {application.applied ? application.status : "Not Applied"}
-            </div>
-            <div className="date-applied">
-              {application.date?.toString() || "12/12/12"}
-            </div>
-          </div>
+        {applications.map((application, index) => (
+          <Application application={application} key={index} />
         ))}
       </div>
     </div>
