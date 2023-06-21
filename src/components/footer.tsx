@@ -1,4 +1,5 @@
 import Button from "@mui/material/Button";
+import "./footer.css";
 
 export default function Footer() {
   return (
