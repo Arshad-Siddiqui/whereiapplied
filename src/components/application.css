@@ -3,4 +3,12 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  height: 128px;
+}
+
+.application-image-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

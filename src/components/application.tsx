@@ -19,11 +19,13 @@ export default function Application({
           Date Applied: {application.date?.toString() || "12/12/12"}
         </div>
       </div>
-      <img
-        src={`https://logo.clearbit.com/${website}`}
-        height="128px"
-        width="128px"
-      />
+      <div className="application-image-container">
+        <img
+          src={`https://logo.clearbit.com/${website}`}
+          width="128px"
+          height="auto"
+        />
+      </div>
     </Card>
   );
 }
