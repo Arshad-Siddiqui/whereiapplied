@@ -1,7 +1,7 @@
 import Card from "@mui/material/Card";
 import "./application.css";
 import { Typography } from "@mui/material";
-import { Application as ApplicationType } from "../types";
+import { Application as ApplicationType } from "../../types";
 
 export default function Application({
   application,

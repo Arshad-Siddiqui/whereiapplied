@@ -1,5 +1,5 @@
 import { Button } from "@mui/material";
-import ApplicationForm from "../components/applicationForm";
+import ApplicationForm from "../components/applicationForm/applicationForm";
 import "./application.css";
 import { Link } from "react-router-dom";
 

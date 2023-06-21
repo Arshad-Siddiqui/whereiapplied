@@ -1,6 +1,6 @@
 import "./feed.css";
-import Application from "./application";
-import { Application as ApplicationType } from "../types";
+import Application from "../application/application";
+import { Application as ApplicationType } from "../../types";
 
 export default function Feed({
   applications,

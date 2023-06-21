@@ -1,6 +1,6 @@
-import ButtonAppBar from "../components/buttonAppBar";
-import Feed from "../components/feed";
-import Footer from "../components/footer";
+import ButtonAppBar from "../components/buttonAppBar/buttonAppBar";
+import Feed from "../components/feed/feed";
+import Footer from "../components/footer/footer";
 import { useEffect, useState } from "react";
 import { Application } from "../types";
 
