@@ -1,4 +1,10 @@
 .feed-body {
   display: flex;
   flex-direction: column;
+  max-width: 460px;
+}
+.feed {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
