@@ -14,10 +14,10 @@ export default function Feed() {
 
   return (
     <div className="feed">
+      <Button variant="contained" color="primary" className="new-button">
+        New
+      </Button>
       <div className="feed-body">
-        <Button variant="contained" color="primary" className="add-new-button">
-          Add New
-        </Button>
         {applications.map((application, index) => (
           <Application application={application} key={index} />
         ))}

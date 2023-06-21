@@ -1,8 +1,9 @@
-.feed-body {
+.feed-body,
+.feed {
   display: flex;
   flex-direction: column;
 }
 
-.add-new-button {
-  margin: 0.2rem;
+.feed {
+  margin: 0.3rem;
 }
