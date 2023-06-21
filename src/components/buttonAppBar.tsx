@@ -7,10 +7,17 @@ import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import Add from "@mui/icons-material/Add";
 import { Link } from "react-router-dom";
+import { Dispatch, SetStateAction } from "react";
 
-export default function ButtonAppBar() {
+export default function ButtonAppBar({
+  setApplications,
+}: {
+  setApplications: Dispatch<SetStateAction<application[]>>;
+}) {
   const sort = () => {
-    console.log("sort");
+    setApplications((prev: application[]) => {
+      return prev.filter((application) => application.status != "Rejected");
+    });
   };
 
   return (
@@ -39,4 +46,12 @@ export default function ButtonAppBar() {
       </AppBar>
     </Box>
   );
+}
+
+interface application {
+  name: string;
+  applied: boolean;
+  status: string;
+  date: Date | null;
+  website: string;
 }

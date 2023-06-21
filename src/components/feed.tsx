@@ -1,17 +1,11 @@
 import "./feed.css";
-import { useState, useEffect } from "react";
 import Application from "./application";
 
-export default function Feed() {
-  const [applications, setApplications] = useState<application[]>([]);
-
-  useEffect(() => {
-    fetch("api/applications")
-      .then((res) => res.json())
-      .then((data) => setApplications(data))
-      .catch((err) => console.log(err));
-  }, []);
-
+export default function Feed({
+  applications,
+}: {
+  applications: application[];
+}) {
   return (
     <div className="feed">
       <div className="feed-body">
