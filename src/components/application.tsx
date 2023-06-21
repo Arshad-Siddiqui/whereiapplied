@@ -1,5 +1,6 @@
 import Card from "@mui/material/Card";
 import "./application.css";
+import { Typography } from "@mui/material";
 
 export default function Application({
   application,
@@ -11,13 +12,28 @@ export default function Application({
   return (
     <Card className="application-container">
       <div className="application-text-container">
-        <div className="application-header">{application.name}</div>
-        <div className="application-status">
+        <Typography
+          gutterBottom
+          variant="h5"
+          component="div"
+          className="application-header"
+        >
+          {application.name}
+        </Typography>
+        <Typography
+          variant="body2"
+          color="text.secondary"
+          className="application-status"
+        >
           {application.applied ? application.status : "Not Applied"}
-        </div>
-        <div className="date-applied">
+        </Typography>
+        <Typography
+          variant="body2"
+          color="text.secondary"
+          className="date-applied"
+        >
           Date Applied: {application.date?.toString() || "12/12/12"}
-        </div>
+        </Typography>
       </div>
       <div className="application-image-container">
         <img
