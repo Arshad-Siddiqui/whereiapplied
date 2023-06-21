@@ -1,9 +1,4 @@
-.feed-body,
-.feed {
+.feed-body {
   display: flex;
   flex-direction: column;
-}
-
-.feed {
-  margin: 0.3rem;
 }
