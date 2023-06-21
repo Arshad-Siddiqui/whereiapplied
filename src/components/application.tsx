@@ -9,8 +9,12 @@ export default function Application({
 }) {
   // Website is used to get the logo from clearbit
   const website: string = application.website || "clearbit.com";
+
+  const containerClassName = `application-container ${
+    application.status === "Rejected" ? "rejected" : ""
+  }`;
   return (
-    <Card className="application-container">
+    <Card className={containerClassName}>
       <div className="application-text-container">
         <Typography
           gutterBottom

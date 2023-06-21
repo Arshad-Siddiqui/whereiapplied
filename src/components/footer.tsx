@@ -1,9 +1,11 @@
+import Button from "@mui/material/Button";
+
 export default function Footer() {
   return (
     <footer>
-      <p>
-        Logos from <a href="https://clearbit.com/logo">ClearBit</a>
-      </p>
+      <a href="https://clearbit.com/logo">
+        <Button>Logos from ClearBit</Button>
+      </a>
     </footer>
   );
 }
