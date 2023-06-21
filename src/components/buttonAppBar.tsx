@@ -8,18 +8,13 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Add from "@mui/icons-material/Add";
 import { Link } from "react-router-dom";
 import { Dispatch, SetStateAction } from "react";
+import FilterButton from "./filterButton";
 
 export default function ButtonAppBar({
   setApplications,
 }: {
   setApplications: Dispatch<SetStateAction<application[]>>;
 }) {
-  const sort = () => {
-    setApplications((prev: application[]) => {
-      return prev.filter((application) => application.status != "Rejected");
-    });
-  };
-
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
@@ -39,9 +34,7 @@ export default function ButtonAppBar({
           <Button color="inherit" component={Link} to="/application-form">
             <Add color="inherit" />
           </Button>
-          <Button color="inherit" onClick={sort}>
-            Sort
-          </Button>
+          <FilterButton setApplications={setApplications} />
         </Toolbar>
       </AppBar>
     </Box>
