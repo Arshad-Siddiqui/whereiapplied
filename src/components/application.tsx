@@ -13,6 +13,9 @@ export default function Application({
   const containerClassName = `application-container ${
     application.status === "Rejected" ? "rejected" : ""
   }`;
+
+  const dateApplied =
+    application.date?.toString().split("T")[0] || "Not Specified";
   return (
     <Card className={containerClassName}>
       <div className="application-text-container">
@@ -36,7 +39,7 @@ export default function Application({
           color="text.secondary"
           className="date-applied"
         >
-          Date Applied: {application.date?.toString() || "12/12/12"}
+          Date Applied: {dateApplied}
         </Typography>
       </div>
       <div className="application-image-container">
