@@ -8,7 +8,8 @@ export default function Feed() {
   useEffect(() => {
     fetch("api/applications")
       .then((res) => res.json())
-      .then((data) => setApplications(data));
+      .then((data) => setApplications(data))
+      .catch((err) => console.log(err));
   }, []);
 
   return (
