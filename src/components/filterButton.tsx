@@ -8,7 +8,7 @@ export default function FilterButton({
 }) {
   const sort = () => {
     setApplications((prev: application[]) => {
-      return prev.filter((application) => application.status != "Rejected");
+      return prev;
     });
   };
 

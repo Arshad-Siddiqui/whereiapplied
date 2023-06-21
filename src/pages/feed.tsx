@@ -2,9 +2,10 @@ import ButtonAppBar from "../components/buttonAppBar";
 import Feed from "../components/feed";
 import Footer from "../components/footer";
 import { useEffect, useState } from "react";
+import { Application } from "../types";
 
 export default function FeedPage() {
-  const [applications, setApplications] = useState<application[]>([]);
+  const [applications, setApplications] = useState<Application[]>([]);
 
   useEffect(() => {
     fetch("api/applications")
@@ -20,12 +21,4 @@ export default function FeedPage() {
       <Footer />
     </div>
   );
-}
-
-interface application {
-  name: string;
-  applied: boolean;
-  status: string;
-  date: Date | null;
-  website: string;
 }

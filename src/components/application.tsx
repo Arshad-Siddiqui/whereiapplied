@@ -1,11 +1,12 @@
 import Card from "@mui/material/Card";
 import "./application.css";
 import { Typography } from "@mui/material";
+import { Application as ApplicationType } from "../types";
 
 export default function Application({
   application,
 }: {
-  application: application;
+  application: ApplicationType;
 }) {
   // <--- Processing info for display --->
   const website: string = application.website || "clearbit.com";
@@ -57,11 +58,3 @@ export default function Application({
     </Card>
   );
 }
-
-type application = {
-  name: string;
-  applied: boolean;
-  status: string;
-  date: Date | null;
-  website: string;
-};

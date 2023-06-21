@@ -9,11 +9,12 @@ import Add from "@mui/icons-material/Add";
 import { Link } from "react-router-dom";
 import { Dispatch, SetStateAction } from "react";
 import FilterButton from "./filterButton";
+import { Application } from "../types";
 
 export default function ButtonAppBar({
   setApplications,
 }: {
-  setApplications: Dispatch<SetStateAction<application[]>>;
+  setApplications: Dispatch<SetStateAction<Application[]>>;
 }) {
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -39,12 +40,4 @@ export default function ButtonAppBar({
       </AppBar>
     </Box>
   );
-}
-
-interface application {
-  name: string;
-  applied: boolean;
-  status: string;
-  date: Date | null;
-  website: string;
 }

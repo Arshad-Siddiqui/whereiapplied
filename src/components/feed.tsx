@@ -1,10 +1,11 @@
 import "./feed.css";
 import Application from "./application";
+import { Application as ApplicationType } from "../types";
 
 export default function Feed({
   applications,
 }: {
-  applications: application[];
+  applications: ApplicationType[];
 }) {
   return (
     <div className="feed">
@@ -16,11 +17,3 @@ export default function Feed({
     </div>
   );
 }
-
-type application = {
-  name: string;
-  applied: boolean;
-  status: string;
-  date: Date | null;
-  website: string;
-};
