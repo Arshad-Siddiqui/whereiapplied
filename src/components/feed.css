@@ -1,11 +1,8 @@
-.application-container {
-  border: 1px solid black;
-  border-radius: 5px;
-  margin: 5px;
-  max-width: 300px;
-}
-
 .feed-body {
   display: flex;
   flex-direction: column;
+}
+
+.add-new-button {
+  margin: 0.2rem;
 }

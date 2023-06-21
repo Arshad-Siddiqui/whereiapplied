@@ -1,6 +1,7 @@
 import "./feed.css";
 import { useState, useEffect } from "react";
 import Application from "./application";
+import Button from "@mui/material/Button";
 
 export default function Feed() {
   const [applications, setApplications] = useState<application[]>([]);
@@ -13,9 +14,10 @@ export default function Feed() {
 
   return (
     <div className="feed">
-      <h1 className="feed-header">Feed</h1>
       <div className="feed-body">
-        <p>Here are your applications</p>
+        <Button variant="contained" color="primary" className="add-new-button">
+          Add New
+        </Button>
         {applications.map((application, index) => (
           <Application application={application} key={index} />
         ))}
