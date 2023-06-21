@@ -15,7 +15,7 @@ export default function FeedPage() {
   }, []);
 
   return (
-    <div className="feed-page">
+    <div className="feed-page page">
       <ButtonAppBar setApplications={setApplications} />
       <Feed applications={applications} />
       <Footer />

@@ -4,7 +4,7 @@ import "./application.css";
 
 export default function ApplicationPage() {
   return (
-    <div className="application-form-page">
+    <div className="application-form-page page">
       <ApplicationForm />
       <Button variant="contained" href="/" color="primary">
         Home
