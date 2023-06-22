@@ -1,6 +1,10 @@
 .application-form {
   display: flex;
   flex-direction: column;
-  max-width: 450px;
+  max-width: 500px;
   justify-content: space-around;
+}
+
+.application-form-container {
+  max-width: 500px;
 }
