@@ -5,17 +5,9 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
-import Add from "@mui/icons-material/Add";
 import { Link } from "react-router-dom";
-import { Dispatch, SetStateAction } from "react";
-import FilterButton from "./filterButton";
-import { Application } from "../../types";
 
-export default function ButtonAppBar({
-  setApplications,
-}: {
-  setApplications: Dispatch<SetStateAction<Application[]>>;
-}) {
+export default function FormAppBar() {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="fixed">
@@ -30,11 +22,10 @@ export default function ButtonAppBar({
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Feed
+            Add Application
           </Typography>
-          <FilterButton setApplications={setApplications} />
-          <Button color="inherit" component={Link} to="/application-form">
-            <Add color="inherit" />
+          <Button color="inherit" component={Link} to="/">
+            Feed
           </Button>
         </Toolbar>
       </AppBar>

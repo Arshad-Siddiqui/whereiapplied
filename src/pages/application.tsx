@@ -1,15 +1,12 @@
-import { Button } from "@mui/material";
 import ApplicationForm from "../components/applicationForm/applicationForm";
 import "./application.css";
-import { Link } from "react-router-dom";
+import FormAppBar from "../components/formAppBar/formAppbar";
 
 export default function ApplicationPage() {
   return (
     <div className="application-form-page page">
+      <FormAppBar />
       <ApplicationForm />
-      <Button variant="contained" component={Link} to="/" color="primary">
-        Home
-      </Button>
     </div>
   );
 }
