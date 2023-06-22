@@ -1,4 +1,11 @@
-import { Card } from "@mui/material";
+import {
+  Card,
+  FormControl,
+  RadioGroup,
+  FormControlLabel,
+  Radio,
+  FormLabel,
+} from "@mui/material";
 import "./applicationForm.css";
 
 export default function ApplicationForm() {
@@ -13,18 +20,30 @@ export default function ApplicationForm() {
           Applied:
           <input type="checkbox" name="applied" placeholder="Applied" />
         </label>
-        <label>
-          <input type="radio" name="status" value="Accepted" />
-          Accepted
-        </label>
-        <label>
-          <input type="radio" name="status" value="Pending" />
-          Pending
-        </label>
-        <label>
-          <input type="radio" name="status" value="Rejected" />
-          Rejected
-        </label>
+        <FormControl>
+          <FormLabel id="demo-radio-buttons-group-label">Status</FormLabel>
+          <RadioGroup
+            aria-labelledby="demo-radio-buttons-group-label"
+            defaultValue="accepted"
+            name="radio-buttons-group"
+          >
+            <FormControlLabel
+              value="accepted"
+              control={<Radio />}
+              label="Accepted"
+            />
+            <FormControlLabel
+              value="pending"
+              control={<Radio />}
+              label="Pending"
+            />
+            <FormControlLabel
+              value="rejected"
+              control={<Radio />}
+              label="Rejected"
+            />
+          </RadioGroup>
+        </FormControl>
         <label>
           Date Applied:
           <input type="date" name="date" />
