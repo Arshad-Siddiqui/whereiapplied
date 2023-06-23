@@ -8,7 +8,13 @@ export default function FeedPage() {
   const [applications, setApplications] = useState<Application[]>([]);
 
   useEffect(() => {
-    fetch("api/applications")
+    fetch("https://whereiapplied.onrender.com/applications", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      mode: "cors",
+    })
       .then((res) => res.json())
       .then((data) => setApplications(data))
       .catch((err) => console.log(err));
