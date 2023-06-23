@@ -6,7 +6,9 @@ export default function ApplicationPage() {
   return (
     <div className="application-form-page page">
       <FormAppBar />
-      <ApplicationForm />
+      <div className="application-form-page-body">
+        <ApplicationForm />
+      </div>
     </div>
   );
 }
