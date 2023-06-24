@@ -15,6 +15,11 @@
 }
 
 .rejected {
+  background-color: red;
+  opacity: 0.5;
+}
+
+.no-response {
   opacity: 0.5;
 }
 

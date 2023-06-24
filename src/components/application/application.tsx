@@ -13,7 +13,7 @@ export default function Application({
 
   const containerClassName = `application-container ${
     application.status === "Rejected" ? "rejected" : ""
-  }`;
+  } ${application.status === "No response" ? "no-response" : ""}`;
 
   const dateApplied =
     application.date?.toString().split("T")[0] || "Not Specified";

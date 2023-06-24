@@ -16,7 +16,7 @@ export default function FeedPage() {
       mode: "cors",
     })
       .then((res) => res.json())
-      .then((data) => setApplications(data))
+      .then((data) => setApplications(data.reverse()))
       .catch((err) => console.log(err));
   }, []);
 
