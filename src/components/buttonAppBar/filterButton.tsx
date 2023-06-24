@@ -1,13 +1,14 @@
 import { Button } from "@mui/material";
 import { Dispatch, SetStateAction } from "react";
+import { Application } from "../../types";
 
 export default function FilterButton({
   setApplications,
 }: {
-  setApplications: Dispatch<SetStateAction<application[]>>;
+  setApplications: Dispatch<SetStateAction<Application[]>>;
 }) {
   const sort = () => {
-    setApplications((prev: application[]) => {
+    setApplications((prev: Application[]) => {
       return prev;
     });
   };
@@ -18,12 +19,3 @@ export default function FilterButton({
     </Button>
   );
 }
-
-interface application {
-  name: string;
-  applied: boolean;
-  status: string;
-  date: Date | null;
-  website: string;
-}
-// TODO: Create an application type to import around
