@@ -9,9 +9,35 @@ import {
 import "./applicationForm.css";
 
 export default function ApplicationForm() {
+  const handleSubmit = (event: {
+    preventDefault: () => void;
+    currentTarget: HTMLFormElement | undefined;
+  }) => {
+    event.preventDefault();
+    const data = new FormData(event.currentTarget);
+    const applied = data.get("applied") === "on" ? true : false;
+
+    fetch("https://whereiapplied.onrender.com/applications/add", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name: data.get("name"),
+        applied: applied,
+        status: data.get("status"),
+        date: data.get("date"),
+        website: data.get("website"),
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data))
+      .catch((err) => console.log(err));
+  };
+
   return (
     <Card className="application-form-container">
-      <form action="/api/applications/add" className="application-form">
+      <form onSubmit={handleSubmit} className="application-form">
         <label>
           Name:
           <input type="text" name="name" placeholder="Name" />
