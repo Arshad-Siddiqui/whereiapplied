@@ -51,7 +51,7 @@ export default function Application({
       <div className="application-image-container">
         <img
           src={`https://logo.clearbit.com/${website}`}
-          width="128px"
+          width="80px"
           height="auto"
         />
       </div>

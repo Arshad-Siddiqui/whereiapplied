@@ -1,9 +1,9 @@
 .application-container {
-  margin: 0.3rem;
+  margin: 0.2rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  height: 128px;
+  height: 80px;
   max-width: 500px;
 }
 
