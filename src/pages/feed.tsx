@@ -6,6 +6,7 @@ import { Application } from "../types";
 
 export default function FeedPage() {
   const [applications, setApplications] = useState<Application[]>([]);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
 
   useEffect(() => {
     fetch("https://whereiapplied.onrender.com/applications", {
@@ -16,14 +17,17 @@ export default function FeedPage() {
       mode: "cors",
     })
       .then((res) => res.json())
-      .then((data) => setApplications(data.reverse()))
+      .then((data) => {
+        setApplications(data.reverse());
+        setIsLoading(false);
+      })
       .catch((err) => console.log(err));
   }, []);
 
   return (
     <div className="feed-page page">
       <ButtonAppBar setApplications={setApplications} />
-      <Feed applications={applications} />
+      <Feed applications={applications} isLoading={isLoading} />
       <Footer />
     </div>
   );

@@ -3,6 +3,10 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+
+.application-container,
+.application-skeleton {
   height: 80px;
   max-width: 500px;
 }
