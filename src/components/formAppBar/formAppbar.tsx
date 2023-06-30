@@ -6,6 +6,7 @@ import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Link } from "react-router-dom";
+import FeedIcon from "@mui/icons-material/Feed";
 
 export default function FormAppBar() {
   return (
@@ -25,7 +26,7 @@ export default function FormAppBar() {
             Add Application
           </Typography>
           <Button color="inherit" component={Link} to="/">
-            Feed
+            <FeedIcon color="inherit" />
           </Button>
         </Toolbar>
       </AppBar>

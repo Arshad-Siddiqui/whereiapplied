@@ -11,6 +11,7 @@ import { Dispatch, SetStateAction } from "react";
 import FilterButton from "./filterButton";
 import ReverseButton from "./reverseButton";
 import { Application } from "../../types";
+import { Refresh } from "@mui/icons-material";
 
 export default function ButtonAppBar({
   setApplications,
@@ -38,6 +39,9 @@ export default function ButtonAppBar({
           </Typography>
           <ReverseButton setApplications={setApplications} />
           <FilterButton setApplications={setApplications} />
+          <Button color="inherit" component={Link} to="/">
+            <Refresh color="inherit" />
+          </Button>
           <Button color="inherit" component={Link} to="/application-form">
             <Add color="inherit" />
           </Button>
