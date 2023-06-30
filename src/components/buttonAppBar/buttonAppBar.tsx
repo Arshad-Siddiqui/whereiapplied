@@ -14,8 +14,10 @@ import { Application } from "../../types";
 
 export default function ButtonAppBar({
   setApplications,
+  setOpen,
 }: {
   setApplications: Dispatch<SetStateAction<Application[]>>;
+  setOpen: Dispatch<SetStateAction<boolean>>;
 }) {
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -27,6 +29,7 @@ export default function ButtonAppBar({
             color="inherit"
             aria-label="menu"
             sx={{ mr: 2 }}
+            onClick={() => setOpen(true)}
           >
             <MenuIcon />
           </IconButton>
