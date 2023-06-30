@@ -3,10 +3,8 @@ import Feed from "../components/feed/feed";
 import Footer from "../components/footer/footer";
 import { Dispatch, SetStateAction } from "react";
 import { Application } from "../types";
-import Drawer from "@mui/material/Drawer";
+import Drawer from "../components/buttonAppBar/drawer";
 import { useState } from "react";
-import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
 
 export default function FeedPage({
   applications,
@@ -21,13 +19,7 @@ export default function FeedPage({
 
   return (
     <div className="feed-page page">
-      <Drawer anchor="left" open={open} onClose={() => setOpen(false)}>
-        <Box p={2}>
-          <Typography variant="h6" component="div">
-            Side Panel
-          </Typography>
-        </Box>
-      </Drawer>
+      <Drawer open={open} setOpen={setOpen} />
       <ButtonAppBar setApplications={setApplications} setOpen={setOpen} />
       <Feed applications={applications} isLoading={isLoading} />
       <Footer />
