@@ -5,8 +5,8 @@ export default function ApplicationSkeleton() {
   return (
     <div className="application-skeleton">
       {amountOfFullLines.map((_, index) => (
-        <div>
-          <Skeleton variant="text" sx={{ fontSize: "1rem" }} key={index} />
+        <div key={index}>
+          <Skeleton variant="text" sx={{ fontSize: "1rem" }} />
           <Skeleton variant="text" sx={{ fontSize: "1rem" }} width="80%" />
         </div>
       ))}
