@@ -1,7 +1,7 @@
 import "./feed.css";
 import Application from "../application/application";
 import { Application as ApplicationType } from "../../types";
-import ApplicationSkeleton from "../application/applicationSkeleton";
+import FeedSkeleton from "./feedSkeleton";
 
 export default function Feed({
   applications,
@@ -13,7 +13,7 @@ export default function Feed({
   return (
     <div className="feed">
       <div className="feed-body">
-        {isLoading && <ApplicationSkeleton />}
+        {isLoading && <FeedSkeleton />}
         {applications.map((application, index) => (
           <Application application={application} key={index} />
         ))}
