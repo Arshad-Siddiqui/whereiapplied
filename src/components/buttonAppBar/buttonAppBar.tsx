@@ -12,6 +12,7 @@ import FilterButton from "./filterButton";
 import ReverseButton from "./reverseButton";
 import { Application } from "../../types";
 import { Refresh } from "@mui/icons-material";
+import getApps from "../../fetch/getApps";
 
 export default function ButtonAppBar({
   setApplications,
@@ -20,6 +21,11 @@ export default function ButtonAppBar({
   setApplications: Dispatch<SetStateAction<Application[]>>;
   setOpen: Dispatch<SetStateAction<boolean>>;
 }) {
+  const refreshApps = () => {
+    getApps().then((apps) => {
+      setApplications(apps.reverse());
+    });
+  };
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="fixed">
@@ -39,7 +45,7 @@ export default function ButtonAppBar({
           </Typography>
           <ReverseButton setApplications={setApplications} />
           <FilterButton setApplications={setApplications} />
-          <Button color="inherit" component={Link} to="/">
+          <Button color="inherit" onClick={refreshApps}>
             <Refresh color="inherit" />
           </Button>
           <Button color="inherit" component={Link} to="/application-form">
