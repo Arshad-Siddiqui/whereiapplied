@@ -18,3 +18,7 @@ This is a web app to keep track of the places I have applied.
 - [] Let people sign in and save their own applications.
 - [] Add more filtering options.
 - [] Let people click a card and get a more detailed view of the application.
+
+## Problems
+
+- Entire body has a margin-top which is problematic for when there is no navbar
