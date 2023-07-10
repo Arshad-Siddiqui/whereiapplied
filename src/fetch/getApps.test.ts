@@ -7,26 +7,21 @@ describe("getApps", () => {
 
   it("should return a list of apps", async () => {
     const response = await getApps();
-    console.log(response.body.applications);
-    expect(response).toEqual({
-      body: {
-        applications: [
-          {
-            _id: "64708d3b403528a8aecada91",
-            applied: true,
-            name: "Octopus Energy",
-            status: "Rejected",
-            website: "https://octopus.energy/",
-          },
-          {
-            _id: "64708d3b403528a8aecada92",
-            applied: true,
-            name: "Starling Bank",
-            status: "Accepted",
-            website: "https://starlingbank.com/",
-          },
-        ],
+    expect(response).toEqual([
+      {
+        _id: "646f626d197fcbe871a19ec4",
+        applied: true,
+        name: "Canonical",
+        status: "Rejected",
+        website: "https://canonical.com/",
       },
-    });
+      {
+        _id: "646f8aa0197fcbe871a19ec5",
+        applied: true,
+        name: "Viable Data",
+        status: "Rejected",
+        website: "https://www.viabledata.co.uk/",
+      },
+    ]);
   });
 });
