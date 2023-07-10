@@ -7,8 +7,7 @@ describe("login", () => {
 
   it("should return a token", async () => {
     const response = await login("email", "password");
-    const token = response.body.token;
-    expect(token).toBe("abc123");
+    expect(response).toBe("abc123");
   });
 });
 
