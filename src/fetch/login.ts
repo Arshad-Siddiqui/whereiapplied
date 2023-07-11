@@ -1,7 +1,4 @@
-export default function login(
-  email: string,
-  password: string
-): Promise<string> {
+export default function login(email: string, password: string): Promise<any> {
   return fetch("https://whereiapplied.onrender.com/users/login", {
     method: "POST",
     headers: {
@@ -14,6 +11,5 @@ export default function login(
     }),
   })
     .then((res) => res.json())
-    .then((res) => res.body.token)
     .catch((err) => console.log(err));
 }
