@@ -12,6 +12,7 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 
 import login from "../../fetch/login";
+
 function Copyright(props: { sx: { mt: number; mb: number } }) {
   return (
     <Typography
@@ -44,15 +45,16 @@ export default function Login() {
     if (!email || !password) {
       return;
     }
-    // Problem: API doesn't return in the correct format.
-    // Need it to be body: { token: string } as opposed to
-    // just sending the string.
+
     const response = await login(email, password);
     if (response.status !== 200) {
       console.error(response);
       return;
     }
     window.localStorage.setItem("token", response.body.token);
+    console.log("token", response.body.token);
+    // navigate to home page
+    window.location.href = "/";
   };
 
   return (
