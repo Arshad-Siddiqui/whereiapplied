@@ -13,24 +13,6 @@ import Container from "@mui/material/Container";
 
 import login from "../../fetch/login";
 
-function Copyright(props: { sx: { mt: number; mb: number } }) {
-  return (
-    <Typography
-      variant="body2"
-      color="text.secondary"
-      align="center"
-      {...props}
-    >
-      {"Copyright © "}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
-      </Link>{" "}
-      {new Date().getFullYear()}
-      {"."}
-    </Typography>
-  );
-}
-
 export default function Login() {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -43,16 +25,18 @@ export default function Login() {
     const email = data.get("email")?.toString();
     const password = data.get("password")?.toString();
     if (!email || !password) {
+      // TODO: Place to modify some error state
       return;
     }
 
     const response = await login(email, password);
     if (response.status !== 200) {
       console.error(response);
+      // TODO: Show some more error state
       return;
     }
     window.localStorage.setItem("token", response.body.token);
-    console.log("token", response.body.token);
+    console.log("token: ", response.body.token);
     // navigate to home page
     window.location.href = "/";
   };
@@ -123,5 +107,23 @@ export default function Login() {
       </Box>
       <Copyright sx={{ mt: 8, mb: 4 }} />
     </Container>
+  );
+}
+
+function Copyright(props: { sx: { mt: number; mb: number } }) {
+  return (
+    <Typography
+      variant="body2"
+      color="text.secondary"
+      align="center"
+      {...props}
+    >
+      {"Copyright © "}
+      <Link color="inherit" href="https://whereiapplied.vercel.app/info">
+        whereiapplied
+      </Link>{" "}
+      {new Date().getFullYear()}
+      {"."}
+    </Typography>
   );
 }
