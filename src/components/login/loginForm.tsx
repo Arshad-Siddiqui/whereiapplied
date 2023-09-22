@@ -17,11 +17,6 @@ export default function Login() {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get("email"),
-      password: data.get("password"),
-    });
-
     const email = data.get("email")?.toString();
     const password = data.get("password")?.toString();
     if (!email || !password) {
@@ -36,9 +31,6 @@ export default function Login() {
       return;
     }
     window.localStorage.setItem("token", response.body.token);
-    console.log("token: ", response.body.token);
-    // navigate to home page
-    window.location.href = "/";
   };
 
   return (
