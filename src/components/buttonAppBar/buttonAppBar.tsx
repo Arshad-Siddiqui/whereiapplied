@@ -50,6 +50,9 @@ export default function ButtonAppBar({
           <Button color="inherit" onClick={refreshApps}>
             <Refresh color="inherit" />
           </Button>
+          <Button color="inherit" component={Link} to="/login">
+            Login
+          </Button>
           <Button color="inherit" component={Link} to="/application-form">
             <Add color="inherit" />
           </Button>
