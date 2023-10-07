@@ -7,6 +7,7 @@ import { Application } from "./types";
 import { useEffect, useState } from "react";
 import getApps from "./fetch/getApps";
 import LoginPage from "./pages/login";
+import SignupPage from "./pages/signup";
 
 function App() {
   const [applications, setApplications] = useState<Application[]>([]);
@@ -32,8 +33,9 @@ function App() {
       />
       <Route path="/application-form" element={<ApplicationPage />} />
       <Route path="/test" element={<Test />} />
-      <Route path="*" element={<h1>404</h1>} />
       <Route path="/login" element={<LoginPage />} />
+      <Route path="/signup" element={<SignupPage />} />
+      <Route path="*" element={<h1>404</h1>} />
     </Routes>
   );
 }
